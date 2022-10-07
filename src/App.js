@@ -1,12 +1,12 @@
-import { CurrentUserLoader } from './CurrentUserLoader';
-import { UserInfo } from './UserInfo';
+import { UserLoader } from "./UserLoader";
+import { UserInfo } from "./UserInfo";
 
 function App() {
-	return (
-		<CurrentUserLoader>
-			<UserInfo />
-		</CurrentUserLoader>
-	);
+  return (
+    <UserLoader userId="234">
+      <UserInfo />
+    </UserLoader>
+  );
 }
 
 export default App;
