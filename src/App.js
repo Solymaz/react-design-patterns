@@ -1,25 +1,32 @@
-import { useState } from 'react';
-import { UncontrolledForm } from './UncontrolledForm';
-import { ControlledForm } from './ControlledForm';
-import { UncontrolledModal } from './UncontrolledModal';
-import { ControlledModal } from './ControlledModal';
+import { UncontrolledOnboardingFlow } from "./UncontrolledOnboardingFlow";
+
+const SetpOne = ({ goToNext }) => (
+  <>
+    <h1>Step 1</h1>{" "}
+    <button onClick={() => goToNext({ name: "Sol" })}> Next </button>
+  </>
+);
+const SetpTwo = ({ goToNext }) => (
+  <>
+    <h1>Step 2</h1>{" "}
+    <button onClick={() => goToNext({ age: "22" })}> Next </button>
+  </>
+);
+const SetpThree = ({ goToNext }) => (
+  <>
+    <h1>Step 3</h1>{" "}
+    <button onClick={() => goToNext({ hairColor: "blonde" })}> Next </button>
+  </>
+);
 
 function App() {
-	const [shouldShowModal, setShouldShowModal] = useState(false);
-
-	return (
-		<>
-		<ControlledModal
-			shouldShow={shouldShowModal}
-			onRequestClose={() => setShouldShowModal(false)}
-		>
-			<h1>Hello!</h1>
-		</ControlledModal>
-		<button onClick={() => setShouldShowModal(!shouldShowModal)}>
-			{shouldShowModal ? 'Hide Modal' : 'Show Modal'}
-		</button>
-		</>
-	);
+  return (
+    <UncontrolledOnboardingFlow onFinish={(data) => console.log(data)}>
+      <SetpOne />
+      <SetpTwo />
+      <SetpThree />
+    </UncontrolledOnboardingFlow>
+  );
 }
 
 export default App;
