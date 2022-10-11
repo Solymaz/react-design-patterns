@@ -1,7 +1,7 @@
 import { UserInfo } from "./UserInfo";
 
 function App() {
-  return <UserInfo />;
+  return <UserInfo userId={123} />;
 }
 
 export default App;
