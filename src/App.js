@@ -1,7 +1,10 @@
+import { UserInfo } from "./UserInfo";
+import { printProps } from "./printProps";
+
+const UserInfoWrapped = printProps(UserInfo);
+
 function App() {
-	return (
-		<h1>Your code goes here</h1>
-	);
+  return <UserInfoWrapped a={1} b="Hi" />;
 }
 
 export default App;
